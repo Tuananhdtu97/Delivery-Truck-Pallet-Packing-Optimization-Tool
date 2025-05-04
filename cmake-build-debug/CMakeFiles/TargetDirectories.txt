@@ -1,0 +1,3 @@
+/home/tm-1-3/Secretária/proj2_da/cmake-build-debug/CMakeFiles/untitled.dir
+/home/tm-1-3/Secretária/proj2_da/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/tm-1-3/Secretária/proj2_da/cmake-build-debug/CMakeFiles/rebuild_cache.dir
