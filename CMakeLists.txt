@@ -5,6 +5,8 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(untitled main.cpp
         data.cpp
-        data.h)
+        data.h
+        approximation.h
+        approximation.cpp)
 
 add_compile_definitions(SOURCE_DIR="${CMAKE_SOURCE_DIR}")
