@@ -156,9 +156,15 @@ void displayAlgorithmicOptions(const pair<pair<vector<int>,vector<int>>,int>& va
         switch (algorithmicOption)
         {
         case 1:
-            break;
+            {
+                bruteForce(values.first.second, values.first.first, values.second);
+                goBack();
+            }
         case 2:
-            break;
+            {
+                mainApprox(values.first.second, values.first.first, values.second);
+                goBack();
+            }
         case 3:
             {
                 mainApprox(values.first.second, values.first.first, values.second);
