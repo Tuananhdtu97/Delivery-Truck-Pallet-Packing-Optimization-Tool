@@ -7,6 +7,10 @@ add_executable(untitled main.cpp
         data.cpp
         data.h
         approximation.h
-        approximation.cpp)
+        approximation.cpp
+        bruteforce.cpp
+        bruteforce.h
+        ilp.cpp
+        ilp.h)
 
 add_compile_definitions(SOURCE_DIR="${CMAKE_SOURCE_DIR}")

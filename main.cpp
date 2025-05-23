@@ -7,6 +7,8 @@
 #include <utility>
 #include "data.h"
 #include "approximation.h"
+#include "bruteforce.h"
+#include "ilp.h"
 namespace fs = std::filesystem;
 using namespace std;
 
@@ -171,7 +173,10 @@ void displayAlgorithmicOptions(const pair<pair<vector<int>,vector<int>>,int>& va
                 goBack();
             }
         case 4:
-            break;
+            {
+                knapsackILP(values.first.second, values.first.first, values.second);
+                goBack();
+            }
         case 5:
             {
                 auto newValues = dataSets();
