@@ -2,17 +2,32 @@
 #include <algorithm>
 #include <iostream>
 
+/**
+ * @struct Item
+ * @brief Structure to store item information including index, weight, profit, and profit-to-weight ratio.
+ */
 struct Item{
     int index;
     int weight;
     int profit;
     double profitPerWeight;
 
+/**
+ * @brief Comparison operator to sort items by descending profit-to-weight ratio.
+ */
     bool operator<(const Item& other) const{
         return profitPerWeight > other.profitPerWeight;
     }
 };
 
+/**
+ * @brief Outputs the ILP solution to the console.
+ *
+ * @param profits Vector of profits for each item.
+ * @param weights Vector of weights for each item.
+ * @param usedItems Indices of items included in the optimal solution.
+ * @param totalProfit Total profit of the optimal solution.
+ */
 void outputILP(const std::vector<int>& profits, const std::vector<int>& weights,
                 const std::vector<int>& usedItems, int totalProfit){
     std::vector<int> sortedItems = usedItems;
@@ -28,6 +43,16 @@ void outputILP(const std::vector<int>& profits, const std::vector<int>& weights,
 static int bestProfit = 0;
 static std::vector<int> bestSolution;
 
+/**
+ * @brief Recursive Branch and Bound function.
+ *
+ * @param items Vector of items sorted by profit-to-weight ratio.
+ * @param capacity Maximum capacity of the knapsack.
+ * @param level Current level (index) in the decision tree.
+ * @param currentProfit Accumulated profit.
+ * @param currentWeight Accumulated weight.
+ * @param currentSolution Vector storing the current subset of item indices being explored.
+ */
 static void branchAndBound(const std::vector<Item>& items, int capacity, int level, int currentProfit,
                             int currentWeight, std::vector<int>& currentSolution) {
     if (currentWeight > capacity) return;
@@ -65,6 +90,14 @@ static void branchAndBound(const std::vector<Item>& items, int capacity, int lev
 
 }
 
+/**
+ * @brief Solves the 0/1 Knapsack Problem using Branch and Bound.
+ *
+ * @param profits Vector of profits for each item.
+ * @param weights Vector of weights for each item.
+ * @param capacity Maximum capacity of the knapsack.
+ * @return std::vector<int> Vector of indices of items included in the optimal solution.
+ */
 std::vector<int> knapsackILP(const std::vector<int>& profits, const std::vector<int>& weights, int capacity){
     bestProfit = 0;
     bestSolution.clear();
