@@ -1,11 +1,19 @@
-//
-// Created by bccvg on 14/05/2025.
-//
-
 #include "bruteforce.h"
 #include <iostream>
 #include <vector>
 #include <algorithm>
+
+/**
+ * @brief Outputs the solution for the 0-1 Knapsack problem using brute-force.
+ *
+ * This function prints the selected items (by index, weight, and profit) and the total profit
+ * based on the best subset found by the bruteForce algorithm.
+ *
+ * @param profits Vector containing the profits associated with each item.
+ * @param weights Vector containing the weights of each item.
+ * @param usedItems Vector containing the indices of the items included in the best solution subset.
+ * @param totalProfit Total profit corresponding to the selected subset of items.
+ */
 
 using namespace std;
 
