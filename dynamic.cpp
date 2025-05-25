@@ -9,6 +9,17 @@
 
 using namespace std;
 
+/**
+ * @brief Outputs the solution of the 0-1 Knapsack problem solved using Dynamic Programming.
+ *
+ * This function prints the items chosen (by index, weight, and profit) and the total profit
+ * obtained from the optimal solution.
+ *
+ * @param profits Vector containing the profits of the items.
+ * @param weights Vector containing the weights of the items.
+ * @param usedItems Vector containing the indices of the items included in the final solution.
+ * @param totalProfit Total profit corresponding to the optimal solution.
+ */
 void outputDP(const vector<int> &profits, const vector<int> &weights, const vector<int> &usedItems, int totalProfit) {
     cout << "\n--- DYNAMIC PROGRAMMING SOLUTION ---\n";
     for (int item : usedItems) {
@@ -17,6 +28,19 @@ void outputDP(const vector<int> &profits, const vector<int> &weights, const vect
     cout << "Total Profit: " << totalProfit << endl;
 }
 
+/**
+ * @brief Solves the 0-1 Knapsack problem using a dynamic programming approach.
+ *
+ * Constructs a DP table to determine the maximum profit achievable without exceeding
+ * the given capacity. After building the table, it reconstructs the list of items
+ * that make up the optimal solution.
+ *
+ * @param profits Vector of item profits.
+ * @param weights Vector of item weights.
+ * @param capacity Maximum weight capacity of the knapsack.
+ * @note Time Complexity: O(n * W), where n is the number of items and W is the capacity.
+ * @note Space Complexity: O(n * W), where n is the number of items and W is the capacity.
+ */
 void dynamicProgramming(const vector<int> &profits, const vector<int> &weights, int capacity) {
     int n = profits.size();
 
