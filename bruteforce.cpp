@@ -26,6 +26,18 @@ void outputBrute(const vector<int> &profits, const vector<int> &weights, vector<
     cout << "Total Profit: " << totalProfit << endl;
 }
 
+/**
+ * @brief Solves the 0-1 Knapsack Problem using a brute-force approach.
+ *
+ * This function evaluates all possible combinations (subsets) of items to find the subset
+ * that yields the maximum profit without exceeding the given weight capacity.
+ *
+ * @param profits Vector containing the profits associated with each item.
+ * @param weights Vector containing the weights of each item.
+ * @param capacity Maximum allowable weight capacity.
+ * @note Time Complexity: O(2^n), where n is the number of items.
+ * @note Space Complexity: O(n), due to storage of the current subset.
+ */
 void bruteForce(const vector<int> &profits, const vector<int> &weights, int capacity) {
     int n = profits.size();
     int maxProfit = 0;
