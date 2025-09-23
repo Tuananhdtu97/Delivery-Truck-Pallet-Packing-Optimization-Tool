@@ -21,7 +21,7 @@ Nota : 15,6
 
 </div>
 
-# Relatório da Ferramenta de Otimização de Carga de Paletes em Caminhões
+# Relatório da Ferramenta de Otimização de Carga de Paletes em Camiões
 
 - [Diagrama de Classes](#diagrama-de-classes)  
 - [Interface com o Utilizador](#interface-com-o-utilizador)  
