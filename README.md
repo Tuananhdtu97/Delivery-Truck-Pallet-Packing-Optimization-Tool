@@ -23,81 +23,113 @@ Grade : 15,6
 
 # Delivery Truck Pallet Packing Optimization Tool Report
 
+- [Class Diagram](#class-diagram)  
+- [User Interface](#user-interface)  
+- [Reading the Dataset](#reading-the-dataset)  
+- [Programming Approaches](#programming-approaches)  
+  - [Brute-Force (Exhaustive)](#brute-force-exhaustive)  
+  - [Dynamic Programming](#dynamic-programming)  
+  - [Approximation (Greedy Approach)](#approximation-greedy-approach)  
+  - [Integer Linear Programming](#integer-linear-programming)  
+
+<a id="class-diagram"></a>
 ## Class Diagram
 
 <div align="center">
 <img width="1694" height="786" alt="Captura de ecrã de 2025-09-23 23-04-24" src="https://github.com/user-attachments/assets/77e01a75-7744-461c-88da-635eceafa60e" />
 </div>
 
+<a id="user-interface"></a>
 ## User Interface
 
-- When starting the program, it will be displayed to the user a menu with the options `Exit`, which will terminate the program, and `Select Data Files`;
-- If the second option is selected, all available `Data Files` (those in the same directory as the source code) will be displayed for the user to select;
-- After selecting the ﬁles, it will be shown the algorithmic approaches to solving the problem, for the user to choose between them, being also present an option to go back to the `Select Data Files` section;
-- After performing the algorithm, the solution will be displayed to the user (including the associated total proﬁt) and an option for processing another dataset;
+- ✅ When starting the program, a menu is displayed with the options `Exit` (terminate program) and `Select Data Files`;  
+- ✅ If `Select Data Files` is chosen, all available datasets in the same directory as the source code are listed;  
+- ✅ After dataset selection, algorithmic approaches are shown for the user to choose from, with an option to return to `Select Data Files`;  
+- ✅ Once the algorithm runs, the solution is shown (including total profit) and an option to process another dataset is offered.  
 
+<a id="reading-the-dataset"></a>
 ## Reading the Dataset
 
 After the selection of the ﬁles to process:
 
-- `pair<vector<int>, vector<int>> extractPalletValues(const string& palletsFileName)` opens and reads each line of the `Pallets` ﬁle, extracting each pallet’s `weight` and `profit` and inserting those into vectors `weights` and `profits` respectively, which in the end are returned inside a `pair` in order to be used by other functions;
+- ✅ `pair<vector<int>, vector<int>> extractPalletValues(const string& palletsFileName)`  
+  Opens and reads each line of the `Pallets` ﬁle, extracting each pallet’s `weight` and `profit`, storing them in vectors `weights` and `profits`. Returns a `pair` of these vectors for use in other functions.  
 
-- `int extractTruckCapacity(const string& truckFileName)` extracts and returns the truck’s maximum weight capacity, which is written in the corresponding `Truck` ﬁle.
+- ✅ `int extractTruckCapacity(const string& truckFileName)`  
+  Extracts and returns the truck’s maximum weight capacity from the `Truck` ﬁle.  
 
+<a id="programming-approaches"></a>
 ## Programming Approaches
 
+<a id="brute-force-exhaustive"></a>
 ### Brute-Force (Exhaustive)
 
-- The program iterates through all subsets of the given items;
-- For each subset, calculates the total `weight` and `profit`;
-- If a subset's total weight is within the allowed capacity and its profit is greater than the current best, it updates the best subset;
-- Outputs the indices, weights, and profits of the selected items in the best subset and the maximum total profit achievable without exceeding the capacity.
+- ✅ Iterates through all subsets of the given items;  
+- ✅ For each subset, calculates the total `weight` and `profit`;  
+- ✅ If the total weight is within the allowed capacity and profit is greater than the current best, updates the best subset;  
+- ✅ Outputs the indices, weights, profits of selected items, and the maximum achievable profit.  
 
 **Time Complexity:** `O(n 2^n)`  
 **Space Complexity:** `O(n)`  
 
 **Data Structures:**  
-The brute force function receives 2 vectors (`profit` and `weight`) and an integer (`maximum capacity`).  
-The output function receives the same 2 vectors, plus a vector of indices representing the items selected in the best subset and an integer representing the maximum profit.
+- Input: 2 vectors (`profit`, `weight`) + integer (`maximum capacity`).  
+- Output: same 2 vectors + vector of selected indices + integer (`maximum profit`).  
 
+<a id="dynamic-programming"></a>
 ### Dynamic Programming
 
-#### Greedy Algorithm A
+- ✅ Takes as input profits, weights, and knapsack capacity;  
+- ✅ Builds a DP table to compute the maximum profit without exceeding capacity;  
+- ✅ Backtracks through the table to find items in the optimal solution;  
+- ✅ Outputs selected items (index, weight, profit) and total profit;  
+- ✅ More efficient than brute-force for larger inputs.  
 
-Sort pallets by increasing order of their `weight-to-profit` ratio and then pick the pallets while they do not surpass the truck’s maximum weight capacity.
+**Time Complexity:** `O(nW)`  
+**Space Complexity:** `O(nW)`  
 
-#### Greedy Algorithm B
+**Data Structures:**  
+- Input: 2 vectors (`profit`, `weight`) + integer (`maximum capacity`).  
+- Output: same 2 vectors + vector of selected indices + integer (`total profit`).  
 
-Sort pallets by increasing order of their `profits` and then pick the pallets while they still fit in the truck.
+<a id="approximation-greedy-approach"></a>
+### Approximation (Greedy Approach)
 
-#### Approximation Algorithm
+**Greedy Algorithm A**  
+- ✅ Sort by `weight-to-profit` ratio (ascending).  
+- ✅ Select items while they fit in the truck.  
 
-The two greedy approaches are not optimal, so we choose the best solution based on total `profit`.
+**Greedy Algorithm B**  
+- ✅ Sort by `profit` (ascending).  
+- ✅ Select items while they fit in the truck.  
+
+**Approximation Algorithm**  
+- ✅ Picks the better solution between Greedy A and Greedy B.  
 
 **Time Complexity:** `O(n log n)`  
 **Space Complexity:** `O(n)`  
 
 **Data Structures:**  
-Each Greedy Approach returns a `pair` with a vector of the selected items and the associated total `profit`.  
-The Approximation Algorithm returns the elements of the `pair` related to the most proﬁtable solution.
+- Each greedy returns a `pair` (selected items, total profit).  
+- Approximation Algorithm returns the most profitable `pair`.  
 
+<a id="integer-linear-programming"></a>
 ### Integer Linear Programming
 
-##### Item Struct
+#### Item Struct  
+- ✅ Stores `index`, `profit`, `weight`, and `profit-to-weight ratio`.  
+- ✅ Items are sorted in descending order.  
 
-Stores data for each item including the index, `profit`, `weight`, and the `profit-to-weight ratio`. Sorts items in descending order.
+#### Branch and Bound  
+- ✅ Explores item inclusion in the knapsack to maximise profit.  
+- ✅ Prunes unpromising branches.  
 
-#### Branch and Bound
-
-Explores which items to include in the knapsack in an attempt to maximise the total `profit`, while pruning the unpromising branches.
-
-#### knapsackILP
-
-Main function to solve the `0/1 knapsack` problem using the Branch and Bound Integer Linear Programming approach.
+#### knapsackILP` 
+- ✅ Main function solving `0/1 knapsack` using Branch and Bound ILP approach.  
 
 **Time Complexity:** `O(n log n + 2^n)`  
 **Space Complexity:** `O(n)`  
 
 **Data Structures:**  
-The Branch and Bound uses vectors (one of integers and one of `Items`) to store the current solution and items respectively.  
-The `knapsackILP` uses vectors of integers to store the `profits`, `weights` and the current solution, and one of `Items` for the processed elements.
+- Branch and Bound: vectors of integers and `Items` (current solution + items).  
+- knapsackILP: vectors of `profits`, `weights`, current solution, and processed `Items`.  
