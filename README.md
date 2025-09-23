@@ -31,125 +31,73 @@ Grade : 15,6
 
 ## User Interface
 
-- When starting the program, it will be displayed to the
-user a menu with the options “Exit”, which will
-terminate the program and “Select Data Files”;
+- When starting the program, it will be displayed to the user a menu with the options `Exit`, which will terminate the program, and `Select Data Files`;
+- If the second option is selected, all available `Data Files` (those in the same directory as the source code) will be displayed for the user to select;
+- After selecting the ﬁles, it will be shown the algorithmic approaches to solving the problem, for the user to choose between them, being also present an option to go back to the `Select Data Files` section;
+- After performing the algorithm, the solution will be displayed to the user (including the associated total proﬁt) and an option for processing another dataset;
 
-- If the second option is selected, all available “Data
-Files” (those in the same directory as the source code)
-will be displayed for the user to select;
-
-- After selecting the ﬁles, it will be shown the algorithmic
-approaches to solving the problem, for the user to
-choose between them, being also present an option to
-go back to the “Select Data Files” section;
-
-- After performing the algorithm, the solution will be
-displayed to the user (including the associated total
-proﬁt) and an option for processing another dataset;
-
-## Reading the DataSet
+## Reading the Dataset
 
 After the selection of the ﬁles to process:
 
-- pair<vector<int>, vector<int>> extractPalletValues(const
-string& palletsFileName) opens and reads every line reads
-each line of the “Pallets” ﬁle extracting each pallet’ weight
-and proﬁt and inserting those in vectors weights and
-proﬁts respectively, which in the end are returned inside a
-pair in order to be used by other functions;
+- `pair<vector<int>, vector<int>> extractPalletValues(const string& palletsFileName)` opens and reads each line of the `Pallets` ﬁle, extracting each pallet’s `weight` and `profit` and inserting those into vectors `weights` and `profits` respectively, which in the end are returned inside a `pair` in order to be used by other functions;
 
-- int extractTruckCapacity(const string& truckFileName)
-extracts and returns the truck’s maximum weight capacity,
-which is written in the corresponding “Truck” ﬁle.
+- `int extractTruckCapacity(const string& truckFileName)` extracts and returns the truck’s maximum weight capacity, which is written in the corresponding `Truck` ﬁle.
 
 ## Programming Approaches
 
 ### Brute-Force (Exhaustive)
 
-- The program iterates through all subsets of the given
-items
+- The program iterates through all subsets of the given items;
+- For each subset, calculates the total `weight` and `profit`;
+- If a subset's total weight is within the allowed capacity and its profit is greater than the current best, it updates the best subset;
+- Outputs the indices, weights, and profits of the selected items in the best subset and the maximum total profit achievable without exceeding the capacity.
 
-- For each subset, calculates the total weight and proﬁt
-  
-- If a subset's total weight is within the allowed capacity
-and its proﬁt is greater than the current best, it updates
-the best subset
+**Time Complexity:** `O(n 2^n)`  
+**Space Complexity:** `O(n)`  
 
-- Outputs the indices, weights, and proﬁts of the
-selected items in the best subset and the maximum
-total proﬁt achievable without exceeding the capacity
-
-**Time Complexity:** O (n 2^n)
-
-**Space Complexity:** O (n)
-
-**Data Structures:** The brute force function receives 2
-vectors (proﬁt and weight) and an
-integer (maximum capacity).
-The output function receives the same
-2 vectors, plus a vector of indices
-representing the items selected in the
-best subset and an integer representing
+**Data Structures:**  
+The brute force function receives 2 vectors (`profit` and `weight`) and an integer (`maximum capacity`).  
+The output function receives the same 2 vectors, plus a vector of indices representing the items selected in the best subset and an integer representing the maximum profit.
 
 ### Dynamic Programming
 
 #### Greedy Algorithm A
 
-Sort pallets by increasing order of their
-weight-to-proﬁt ratio and, then, pick the pallets while
-they not surpass the truck´s maximum weight capacity
+Sort pallets by increasing order of their `weight-to-profit` ratio and then pick the pallets while they do not surpass the truck’s maximum weight capacity.
 
 #### Greedy Algorithm B
 
-Sort pallets by increasing order of their proﬁts
-and, next, pick the pallets while they still ﬁt in the truck
+Sort pallets by increasing order of their `profits` and then pick the pallets while they still fit in the truck.
 
 #### Approximation Algorithm
 
-The two greedy approaches are not optimal, so we
-choose from the total proﬁt
+The two greedy approaches are not optimal, so we choose the best solution based on total `profit`.
 
-**Time Complexity:** O (n log n)
+**Time Complexity:** `O(n log n)`  
+**Space Complexity:** `O(n)`  
 
-**Space Complexity:** O (n)
-
-**Data Structures:** Each Greedy Approach returns a
-pair with a vector of the selected
-items and the associated total
-proﬁt; the Approximation
-Algorithm returns the elements of
-the pair related to the most
-proﬁtable solution
+**Data Structures:**  
+Each Greedy Approach returns a `pair` with a vector of the selected items and the associated total `profit`.  
+The Approximation Algorithm returns the elements of the `pair` related to the most proﬁtable solution.
 
 ### Integer Linear Programming
 
 ##### Item Struct
 
-Stores data for each item including the index, proﬁt,
-weight, and the proﬁt-to-weight ratio. Sorts items in
-descending order.
+Stores data for each item including the index, `profit`, `weight`, and the `profit-to-weight ratio`. Sorts items in descending order.
 
 #### Branch and Bound
 
-Explores which items to include in the knapsack in
-attempt to maximise the total proﬁt while pruning the
-unpromising branches.
+Explores which items to include in the knapsack in an attempt to maximise the total `profit`, while pruning the unpromising branches.
 
 #### knapsackILP
 
-Main function to solve the 0/1 knapsack problem using
-the Branch and Bound Integer Linear Programming
-approach.
+Main function to solve the `0/1 knapsack` problem using the Branch and Bound Integer Linear Programming approach.
 
-**Time Complexity:** O (n log n + 2^n)
+**Time Complexity:** `O(n log n + 2^n)`  
+**Space Complexity:** `O(n)`  
 
-**Space Complexity:** O (n)
-
-**Data Structures:** The Branch and Bound uses vectors,
-one of integers and one of Items to
-store the current solution and items
-respectively. The knapsackILP uses
-vectors of integers to store the proﬁts,
-weights and the current solution and
-one of Items for the items processed.
+**Data Structures:**  
+The Branch and Bound uses vectors (one of integers and one of `Items`) to store the current solution and items respectively.  
+The `knapsackILP` uses vectors of integers to store the `profits`, `weights` and the current solution, and one of `Items` for the processed elements.
