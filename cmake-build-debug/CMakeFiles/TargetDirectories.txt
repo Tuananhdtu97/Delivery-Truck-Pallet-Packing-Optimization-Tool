@@ -1,3 +1,0 @@
-/home/tomas/Desktop/DA/Proj2_DA/cmake-build-debug/CMakeFiles/untitled.dir
-/home/tomas/Desktop/DA/Proj2_DA/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/tomas/Desktop/DA/Proj2_DA/cmake-build-debug/CMakeFiles/rebuild_cache.dir

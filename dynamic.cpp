@@ -1,7 +1,3 @@
-//
-// Created by bccvg on 14/05/2025.
-//
-
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -19,6 +15,8 @@ using namespace std;
  * @param weights Vector containing the weights of the items.
  * @param usedItems Vector containing the indices of the items included in the final solution.
  * @param totalProfit Total profit corresponding to the optimal solution.
+ * @note Time Complexity: O(k), where k is the number of items.
+ * @note Space Complexity: O(1)
  */
 void outputDP(const vector<int> &profits, const vector<int> &weights, const vector<int> &usedItems, int totalProfit) {
     cout << "\n--- DYNAMIC PROGRAMMING SOLUTION ---\n";

@@ -27,6 +27,8 @@ struct Item{
  * @param weights Vector of weights for each item.
  * @param usedItems Indices of items included in the optimal solution.
  * @param totalProfit Total profit of the optimal solution.
+ * @note Time Complexity: O(k log k), where k is the number of items used in the solution.
+ * @note Time Complexity: O(1)
  */
 void outputILP(const std::vector<int>& profits, const std::vector<int>& weights,
                 const std::vector<int>& usedItems, int totalProfit){
@@ -52,6 +54,8 @@ static std::vector<int> bestSolution;
  * @param currentProfit Accumulated profit.
  * @param currentWeight Accumulated weight.
  * @param currentSolution Vector storing the current subset of item indices being explored.
+ * @note Time Complexity: O(2^n) in the worst case.
+ * @note Space Complexity: O(n) auxiliary stack space + O(n) for storing the current path.
  */
 static void branchAndBound(const std::vector<Item>& items, int capacity, int level, int currentProfit,
                             int currentWeight, std::vector<int>& currentSolution) {

@@ -13,6 +13,8 @@
  * @param weights Vector containing the weights of each item.
  * @param usedItems Vector containing the indices of the items included in the best solution subset.
  * @param totalProfit Total profit corresponding to the selected subset of items.
+ * @note Time Complexity: O(k log k), where k is the number of items.
+ * @note Space Complexity: O(1)
  */
 
 using namespace std;

@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/untitled.dir/main.cpp.o CMakeFiles/untitled.dir/data.cpp.o CMakeFiles/untitled.dir/approximation.cpp.o CMakeFiles/untitled.dir/bruteforce.cpp.o CMakeFiles/untitled.dir/ilp.cpp.o -o untitled
